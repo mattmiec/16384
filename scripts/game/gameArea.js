@@ -14,7 +14,12 @@ define(['game/config'], function(config) {
             document.body.insertBefore(this.canvas, document.getElementById("controls")); //.body.childNodes[0]);
         },
         drawCell : function(i, j, value) {
-            this.ctx.fillStyle = config.cellColor;
+            var color = config.cellColorMap.get(value);
+            if (color) {
+                this.ctx.fillStyle = config.cellColorMap.get(value);
+            } else {
+                this.ctx.fillStyle = "#000000";
+            }
             let gridPixels = config.canvasSize / config.gridSize;
             this.ctx.fillRect(gridPixels * i, gridPixels * j, gridPixels, gridPixels);
             this.ctx.font = config.textSize + " " + config.textFont;
