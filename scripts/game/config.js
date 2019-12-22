@@ -5,7 +5,7 @@ define([], function() {
         prob1: 0.8,
         cellColor: 'blue',
         textColor: 'white',
-        textSize: '16px',
+        textSize: '24px',
         textFont: 'Georgia'
     }
 });

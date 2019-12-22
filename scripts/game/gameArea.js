@@ -11,7 +11,7 @@ define(['game/config'], function(config) {
             this.canvas.width = config.canvasSize;
             this.canvas.height = config.canvasSize;
             this.ctx = this.canvas.getContext("2d");
-            document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+            document.body.insertBefore(this.canvas, document.getElementById("controls")); //.body.childNodes[0]);
         },
         drawCell : function(i, j, value) {
             this.ctx.fillStyle = config.cellColor;

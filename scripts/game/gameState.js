@@ -122,6 +122,17 @@ define(['game/config'], function (config) {
                 this.reflectVertical();
                 return actionTaken;
             };
+            this.getScore = function () {
+                let score = 0;
+                for (let i = 0; i < config.gridSize; i++) {
+                    for (let j = 0; j < config.gridSize; j++) {
+                        if (this.grid[i][j] != null) {
+                            score += this.grid[i][j];
+                        }
+                    }
+                }
+                return score;
+            }
         }
     return gameState;
 });
